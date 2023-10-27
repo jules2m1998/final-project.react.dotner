@@ -25,4 +25,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Common\Api.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Exceptions\" />
+    <Folder Include="Application\Responses\" />
+  </ItemGroup>
+
 </Project>

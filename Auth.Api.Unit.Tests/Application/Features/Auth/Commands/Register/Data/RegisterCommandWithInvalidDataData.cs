@@ -1,14 +1,14 @@
-﻿using Auth.API.Application.Exceptions;
+﻿using Api.Common.Middlewares.Exceptions;
 using Auth.API.Application.Features.Auth.Commands.Register;
 using System.Collections;
 
 namespace Auth.Api.Unit.Tests.Application.Features.Auth.Commands.Register.Data;
 
-public class RegisterCommandWithInvalidDataData : IEnumerable<object[]>
+public class RegisterCommandWithInvalidDataData
 {
-    public IEnumerator<object[]> GetEnumerator()
+    public static IEnumerable<object[]> Data => new List<object[]>
     {
-        yield return new object[]
+        new object[]
         {
             new RegisterCommand("", "", "", "") { },
             new BadRequestException("Some data are not valid")
@@ -20,8 +20,8 @@ public class RegisterCommandWithInvalidDataData : IEnumerable<object[]>
                     { nameof(RegisterCommand.Name), new string[] { "'Name' must not be empty." } },
                 }
             }
-        };
-        yield return new object[]
+        },
+        new object[]
         {
             new RegisterCommand("test", "", "", "") { },
             new BadRequestException("Some data are not valid")
@@ -33,8 +33,8 @@ public class RegisterCommandWithInvalidDataData : IEnumerable<object[]>
                     { nameof(RegisterCommand.Name), new string[] { "'Name' must not be empty." } },
                 }
             }
-        };
-        yield return new object[]
+        },
+        new object[]
         {
             new RegisterCommand("test@test.com", "", "xtexte", "") { },
             new BadRequestException("Some data are not valid")
@@ -46,8 +46,6 @@ public class RegisterCommandWithInvalidDataData : IEnumerable<object[]>
                     { nameof(RegisterCommand.Name), new string[] { "'Name' must not be empty." } },
                 }
             }
-        };
-    }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        }
+    };
 }

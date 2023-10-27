@@ -1,4 +1,5 @@
-﻿using Auth.API.Application.Responses;
+﻿
+using Api.Common.Responses;
 
 namespace Auth.API.Application.Features.Auth.Commands.Register;
 

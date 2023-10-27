@@ -1,5 +1,5 @@
-﻿using Auth.API.Application.Contracts.Persistence;
-using Auth.API.Application.Exceptions;
+﻿using Api.Common.Middlewares.Exceptions;
+using Auth.API.Application.Contracts.Persistence;
 using AutoMapper;
 using MediatR;
 

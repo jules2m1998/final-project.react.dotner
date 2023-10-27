@@ -15,6 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Auth.API.Application.Contracts.Infrastructure.ContextAccessor;
 using Auth.API.Infrastructure.ContextAccessors;
+using Api.Common;
 
 namespace Auth.API;
 
@@ -72,8 +73,8 @@ public static class StartupExtension
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSetting.Secret)),
                     ValidateLifetime = true,
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
                     ClockSkew = TimeSpan.Zero
                 };
             });
@@ -102,12 +103,14 @@ public static class StartupExtension
         @this.AddScoped<IAuthRepository, AuthRepository>();
         @this.AddScoped<IContextAccessor, ContextAccessor>();
 
+        @this.AddCommonServices();
+
         return @this;
     }
 
     public static async Task<WebApplication> ApplyAuthApplication(this WebApplication @this)
-    
     {
+        @this.CommonConfigureApp();
         using var scope = @this.Services.CreateScope();
         try
         {

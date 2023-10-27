@@ -1,6 +1,6 @@
-﻿using Auth.API.Application.Contracts.Infrastructure.JwtService;
+﻿using Api.Common.Middlewares.Exceptions;
+using Auth.API.Application.Contracts.Infrastructure.JwtService;
 using Auth.API.Application.Contracts.Persistence;
-using Auth.API.Application.Exceptions;
 using Auth.API.Application.Features.Auth.Queries.Login;
 using Auth.API.Contants;
 using Auth.API.Domain;

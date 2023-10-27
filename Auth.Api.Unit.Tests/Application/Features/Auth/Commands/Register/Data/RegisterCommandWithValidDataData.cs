@@ -3,11 +3,11 @@ using System.Collections;
 
 namespace Auth.Api.Unit.Tests.Application.Features.Auth.Commands.Register.Data;
 
-public class RegisterCommandWithValidDataData : IEnumerable<object[]>
+public class RegisterCommandWithValidDataData
 {
-    public IEnumerator<object[]> GetEnumerator()
+    public static IEnumerable<object[]> Data => new List<object[]>
     {
-        yield return new object[]
+        new object[]
         {
             new RegisterCommand("test@test.com", "Tester", "+23055555555", "Coplex-password@12345"),
             new RegisterCommandResponse
@@ -23,8 +23,8 @@ public class RegisterCommandWithValidDataData : IEnumerable<object[]>
                     PhoneNumber = "+23055555555",
                 }
             }
-        };
-        yield return new object[]
+        },
+        new object[]
         {
             new RegisterCommand("test2@test.com", "Tester 2", "+23055555556", "Coplex-password@12346"),
             new RegisterCommandResponse
@@ -40,8 +40,6 @@ public class RegisterCommandWithValidDataData : IEnumerable<object[]>
                     PhoneNumber = "+23055555556",
                 }
             }
-        };
-    }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        }
+    };
 }

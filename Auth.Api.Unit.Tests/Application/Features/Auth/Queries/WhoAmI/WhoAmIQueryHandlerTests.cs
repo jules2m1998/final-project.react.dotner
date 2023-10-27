@@ -1,5 +1,5 @@
-﻿using Auth.API.Application.Contracts.Persistence;
-using Auth.API.Application.Exceptions;
+﻿using Api.Common.Middlewares.Exceptions;
+using Auth.API.Application.Contracts.Persistence;
 using Auth.API.Application.Features.Auth.Queries.WhoAmI;
 using Auth.API.Contants;
 using Auth.API.Domain;

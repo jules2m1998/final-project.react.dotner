@@ -15,7 +15,7 @@ Scenario: Login failed when username or password invalid
 	| Username | Password |
 	|          |          |
 	When I launch an http login request with my informations
-	Then I get a status 500 response
+	Then I get a status 400 response
 
 @login
 Scenario: Login failed when username or password incorrect

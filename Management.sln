@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.API.Integration.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Common", "Api.Common\Api.Common.csproj", "{3A1A08C1-723F-4E2D-90BF-86CEF7C74404}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Common.Unit.Tests", "Api.Common.Unit.Tests\Api.Common.Unit.Tests.csproj", "{053EEAFA-214F-4EBA-9245-BC06B7AD2B27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{3A1A08C1-723F-4E2D-90BF-86CEF7C74404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A1A08C1-723F-4E2D-90BF-86CEF7C74404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A1A08C1-723F-4E2D-90BF-86CEF7C74404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053EEAFA-214F-4EBA-9245-BC06B7AD2B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053EEAFA-214F-4EBA-9245-BC06B7AD2B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053EEAFA-214F-4EBA-9245-BC06B7AD2B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053EEAFA-214F-4EBA-9245-BC06B7AD2B27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{4143F60B-FE16-420F-BC7B-E0E3FB99E88B} = {3AC226AE-AD88-40CB-873D-3025D6F8CBB7}
 		{7B767456-EE43-44DD-8FCF-5A55525653DD} = {3AC226AE-AD88-40CB-873D-3025D6F8CBB7}
 		{3A1A08C1-723F-4E2D-90BF-86CEF7C74404} = {CA9DBF30-8678-497E-AC01-4BE064EEE310}
+		{053EEAFA-214F-4EBA-9245-BC06B7AD2B27} = {3AC226AE-AD88-40CB-873D-3025D6F8CBB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58BC404C-0097-4083-B44D-D866A770929F}

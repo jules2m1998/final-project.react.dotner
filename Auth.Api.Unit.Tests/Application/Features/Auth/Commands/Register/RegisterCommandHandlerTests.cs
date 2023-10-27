@@ -1,6 +1,6 @@
-﻿using Auth.Api.Unit.Tests.Application.Features.Auth.Commands.Register.Data;
+﻿using Api.Common.Middlewares.Exceptions;
+using Auth.Api.Unit.Tests.Application.Features.Auth.Commands.Register.Data;
 using Auth.API.Application.Contracts.Persistence;
-using Auth.API.Application.Exceptions;
 using Auth.API.Application.Features.Auth.Commands.Register;
 using Auth.API.Domain;
 using AutoMapper;
@@ -21,7 +21,7 @@ public class RegisterCommandHandlerTests
     }
 
     [Theory]
-    [ClassData(typeof(RegisterCommandWithInvalidDataData))]
+    [MemberData(nameof(RegisterCommandWithInvalidDataData.Data), MemberType = typeof(RegisterCommandWithInvalidDataData))]
     public async Task Handle_WithInvalidData_ThrowCustomBadRequestExeceptionWithErrors(RegisterCommand command, BadRequestException exception)
     {
         // Act
@@ -42,7 +42,7 @@ public class RegisterCommandHandlerTests
 
 
     [Theory]
-    [ClassData(typeof(RegisterCommandWithInvalidIdentityDataData))]
+    [MemberData(nameof(RegisterCommandWithInvalidIdentityDataData.Data), MemberType = typeof(RegisterCommandWithInvalidIdentityDataData))]
     public async Task Handler_WithValidCommandButInvalidIdentity_ThrowCustomBadRequestExeceptionWithErrors(RegisterCommand command, BadRequestException exception)
     {
         // Arrange
@@ -73,7 +73,7 @@ public class RegisterCommandHandlerTests
     }
 
     [Theory]
-    [ClassData(typeof(RegisterCommandWithValidDataData))]
+    [MemberData(nameof(RegisterCommandWithValidDataData.Data), MemberType = typeof(RegisterCommandWithValidDataData))]
     public async Task Handle_WithValidData_Return_RegisterCommandResponseWithRegisterDtoAsResult(RegisterCommand command, RegisterCommandResponse response)
     {
         // Arrange

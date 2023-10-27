@@ -1,4 +1,4 @@
-﻿using Auth.API.Application.Exceptions;
+﻿using Api.Common.Middlewares.Exceptions;
 using Auth.API.Application.Features.Auth.Commands.Register;
 using System;
 using System.Collections;
@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Auth.Api.Unit.Tests.Application.Features.Auth.Commands.Register.Data;
 
-internal class RegisterCommandWithInvalidIdentityDataData : IEnumerable<object[]>
+internal class RegisterCommandWithInvalidIdentityDataData
 {
-    public IEnumerator<object[]> GetEnumerator()
+    public static IEnumerable<object[]> Data => new List<object[]>
     {
-        yield return new object[]
+        new object[]
         {
             new RegisterCommand("mail@mail.com", "name", "99999999", "pass") { },
             new BadRequestException("Some data are not valid")
@@ -23,8 +23,6 @@ internal class RegisterCommandWithInvalidIdentityDataData : IEnumerable<object[]
                     { nameof(RegisterCommand.Password), new string[] { "Password mut have at least 8 charaters" } },
                 }
             }
-        };
-    }
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        }
+    };
 }

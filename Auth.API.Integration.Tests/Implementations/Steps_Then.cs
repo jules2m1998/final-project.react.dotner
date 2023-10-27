@@ -42,10 +42,10 @@ public class Steps_Then
 
         Assert.NotNull(_loginContext.LoginQueryResponse);
         Assert.NotNull(dto);
-        Assert.Equal(expectedDto.Email, dto.Email);
-        Assert.Equal(expectedDto.Name, dto.Name);
-        Assert.Equal(expectedDto.PhoneNumber, dto.PhoneNumber);
-        Assert.Equal(expectedDto.Roles.First(), dto.Roles.First());
-        Assert.Equal(expectedDto.Roles.Length, dto.Roles.Length);
+        Assert.Equal(expectedDto.Email, dto?.Email);
+        Assert.Equal(expectedDto.Name, dto?.Name);
+        Assert.Equal(expectedDto.PhoneNumber, dto?.PhoneNumber);
+        Assert.Equal(expectedDto.Roles.First(), dto?.Roles.First());
+        Assert.Equal(expectedDto.Roles.Length, dto?.Roles.Length);
     }
 }
